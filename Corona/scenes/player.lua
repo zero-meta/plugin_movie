@@ -224,10 +224,11 @@ function scene:show(event)
     local phase = event.phase
     --
     if phase == 'will' then
-        movierect = movie.newMovieRect(
+        movierect = movie.newMovieCircle(
             {
                 x = centerX,
                 y = centerY,
+                radius = 300,
                 width = 960,
                 height = 540,
                 channel = 3,
