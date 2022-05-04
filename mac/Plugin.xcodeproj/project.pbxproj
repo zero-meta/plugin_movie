@@ -11,10 +11,9 @@
 		C05CBF06281CF19700DB7F91 /* theoraplay.c in Sources */ = {isa = PBXBuildFile; fileRef = C05CBF03281CF19700DB7F91 /* theoraplay.c */; };
 		C05CBF09281CF20500DB7F91 /* theoraplay_cvtrgb.h in Headers */ = {isa = PBXBuildFile; fileRef = C05CBF07281CF20500DB7F91 /* theoraplay_cvtrgb.h */; };
 		C05CBF0A281CF20500DB7F91 /* PluginMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = C05CBF08281CF20500DB7F91 /* PluginMovie.h */; };
-		C0AA9F32281D4ABD00BEEAAD /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F2E281D4ABD00BEEAAD /* libvorbis.a */; };
-		C0AA9F33281D4ABD00BEEAAD /* libtheoradec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F2F281D4ABD00BEEAAD /* libtheoradec.a */; };
-		C0AA9F35281D4ABD00BEEAAD /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F31281D4ABD00BEEAAD /* libogg.a */; };
-		C0AA9F37281D4AF700BEEAAD /* plugin_movie.h in Headers */ = {isa = PBXBuildFile; fileRef = C0AA9F36281D4AF700BEEAAD /* plugin_movie.h */; };
+		C08CF45028220F6400F82537 /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F31281D4ABD00BEEAAD /* libogg.a */; };
+		C08CF45128220F6400F82537 /* libtheoradec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F2F281D4ABD00BEEAAD /* libtheoradec.a */; };
+		C08CF45228220F6400F82537 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F2E281D4ABD00BEEAAD /* libvorbis.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -29,21 +28,21 @@
 			outputFiles = (
 				"$TARGET_TEMP_DIR/$(INPUT_FILE_BASE).c",
 			);
-			script = "CORONA_DIR=$CORONA_ROOT/Corona\nCORONA_MAC_BIN_DIR=$CORONA_DIR/mac/bin\n\nif [ -e \"$CORONA_MAC_BIN_DIR/lua\" ]; then\n    LUA_DIR=$CORONA_MAC_BIN_DIR/lua\nelse\n    echo \"Could not find proper 32-bit lua build in: $CORONA_MAC_BIN_DIR/lua\"\n    exit 1\nfi\n\necho $CORONA_MAC_BIN_DIR/lua2c.sh $INPUT_FILE_PATH $TARGET_TEMP_DIR $CONFIGURATION\n\"$CORONA_MAC_BIN_DIR/lua2c.sh\" \"$INPUT_FILE_PATH\" \"$TARGET_TEMP_DIR\" \"$CONFIGURATION\" \"$CORONA_MAC_BIN_DIR\"";
+			script = "CORONA_DIR=$CORONA_ROOT/Corona\nCORONA_MAC_BIN_DIR=$CORONA_DIR/mac/bin\n\nif [ -e \"$CORONA_MAC_BIN_DIR/lua\" ]; then\n    LUA_DIR=$CORONA_MAC_BIN_DIR/lua\nelse\n    echo \"Could not find proper 32-bit lua build in: $CORONA_MAC_BIN_DIR/lua\"\n    exit 1\nfi\n\necho $CORONA_MAC_BIN_DIR/lua2c.sh $INPUT_FILE_PATH $TARGET_TEMP_DIR $CONFIGURATION\n\"$CORONA_MAC_BIN_DIR/lua2c.sh\" \"$INPUT_FILE_PATH\" \"$TARGET_TEMP_DIR\" \"$CONFIGURATION\" \"$CORONA_MAC_BIN_DIR\"\n";
 		};
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		A4430897164C70D800B9117B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A49186401641DDB800A39286 /* plugin_movieLib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = plugin_movieLib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49186401641DDB800A39286 /* plugin_movie.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = plugin_movie.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05CBF02281CF19700DB7F91 /* PluginMovie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PluginMovie.cpp; path = ../shared/PluginMovie.cpp; sourceTree = "<group>"; };
 		C05CBF03281CF19700DB7F91 /* theoraplay.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = theoraplay.c; path = ../shared/theoraplay.c; sourceTree = "<group>"; };
 		C05CBF07281CF20500DB7F91 /* theoraplay_cvtrgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = theoraplay_cvtrgb.h; path = ../shared/theoraplay_cvtrgb.h; sourceTree = "<group>"; };
 		C05CBF08281CF20500DB7F91 /* PluginMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginMovie.h; path = ../shared/PluginMovie.h; sourceTree = "<group>"; };
+		C0A211CE2822024000CF866B /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = generated; path = ../shared/generated; sourceTree = "<group>"; };
 		C0AA9F2E281D4ABD00BEEAAD /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../macosxlibs/libvorbis.a; sourceTree = "<group>"; };
 		C0AA9F2F281D4ABD00BEEAAD /* libtheoradec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtheoradec.a; path = ../macosxlibs/libtheoradec.a; sourceTree = "<group>"; };
 		C0AA9F31281D4ABD00BEEAAD /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = ../macosxlibs/libogg.a; sourceTree = "<group>"; };
-		C0AA9F36281D4AF700BEEAAD /* plugin_movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plugin_movie.h; path = ../shared/generated/plugin_movie.h; sourceTree = "<group>"; };
 		F5815AB71EE5C6690027695F /* CoronaNative.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CoronaNative.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,9 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0AA9F32281D4ABD00BEEAAD /* libvorbis.a in Frameworks */,
-				C0AA9F33281D4ABD00BEEAAD /* libtheoradec.a in Frameworks */,
-				C0AA9F35281D4ABD00BEEAAD /* libogg.a in Frameworks */,
+				C08CF45028220F6400F82537 /* libogg.a in Frameworks */,
+				C08CF45128220F6400F82537 /* libtheoradec.a in Frameworks */,
+				C08CF45228220F6400F82537 /* libvorbis.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +63,7 @@
 		A4151F3316879B8200B2B43A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C0AA9F36281D4AF700BEEAAD /* plugin_movie.h */,
+				C0A211CE2822024000CF866B /* generated */,
 				C05CBF08281CF20500DB7F91 /* PluginMovie.h */,
 				C05CBF07281CF20500DB7F91 /* theoraplay_cvtrgb.h */,
 				C05CBF02281CF19700DB7F91 /* PluginMovie.cpp */,
@@ -86,7 +85,7 @@
 		A482DA8515F9B7E70084DC42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A49186401641DDB800A39286 /* plugin_movieLib.dylib */,
+				A49186401641DDB800A39286 /* plugin_movie.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,7 +117,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C05CBF0A281CF20500DB7F91 /* PluginMovie.h in Headers */,
-				C0AA9F37281D4AF700BEEAAD /* plugin_movie.h in Headers */,
 				C05CBF09281CF20500DB7F91 /* theoraplay_cvtrgb.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,9 +124,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A49186331641DDB800A39286 /* plugin_movieLib */ = {
+		A49186331641DDB800A39286 /* plugin_movie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_movieLib" */;
+			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_movie" */;
 			buildPhases = (
 				C22F67901EE9FA0A009D6E9D /* Corona Native */,
 				A49186341641DDB800A39286 /* Sources */,
@@ -141,9 +139,9 @@
 			);
 			dependencies = (
 			);
-			name = plugin_movieLib;
+			name = plugin_movie;
 			productName = ads;
-			productReference = A49186401641DDB800A39286 /* plugin_movieLib.dylib */;
+			productReference = A49186401641DDB800A39286 /* plugin_movie.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +165,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A49186331641DDB800A39286 /* plugin_movieLib */,
+				A49186331641DDB800A39286 /* plugin_movie */,
 			);
 		};
 /* End PBXProject section */
@@ -344,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_movieLib" */ = {
+		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_movie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A491863E1641DDB800A39286 /* Debug */,
