@@ -11,9 +11,10 @@
 		C05CBF06281CF19700DB7F91 /* theoraplay.c in Sources */ = {isa = PBXBuildFile; fileRef = C05CBF03281CF19700DB7F91 /* theoraplay.c */; };
 		C05CBF09281CF20500DB7F91 /* theoraplay_cvtrgb.h in Headers */ = {isa = PBXBuildFile; fileRef = C05CBF07281CF20500DB7F91 /* theoraplay_cvtrgb.h */; };
 		C05CBF0A281CF20500DB7F91 /* PluginMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = C05CBF08281CF20500DB7F91 /* PluginMovie.h */; };
+		C05DC74128234B3300FF8469 /* libtheoradec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05DC74028234AF700FF8469 /* libtheoradec.a */; };
 		C08CF45028220F6400F82537 /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F31281D4ABD00BEEAAD /* libogg.a */; };
-		C08CF45128220F6400F82537 /* libtheoradec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F2F281D4ABD00BEEAAD /* libtheoradec.a */; };
 		C08CF45228220F6400F82537 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA9F2E281D4ABD00BEEAAD /* libvorbis.a */; };
+		C0F1BA752823447D004CE4A5 /* plugin_movie.c in Sources */ = {isa = PBXBuildFile; fileRef = C0F1BA742823447D004CE4A5 /* plugin_movie.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -39,10 +40,10 @@
 		C05CBF03281CF19700DB7F91 /* theoraplay.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = theoraplay.c; path = ../shared/theoraplay.c; sourceTree = "<group>"; };
 		C05CBF07281CF20500DB7F91 /* theoraplay_cvtrgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = theoraplay_cvtrgb.h; path = ../shared/theoraplay_cvtrgb.h; sourceTree = "<group>"; };
 		C05CBF08281CF20500DB7F91 /* PluginMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginMovie.h; path = ../shared/PluginMovie.h; sourceTree = "<group>"; };
-		C0A211CE2822024000CF866B /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = generated; path = ../shared/generated; sourceTree = "<group>"; };
+		C05DC74028234AF700FF8469 /* libtheoradec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtheoradec.a; path = ../macosxlibs/libtheoradec.a; sourceTree = "<group>"; };
 		C0AA9F2E281D4ABD00BEEAAD /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../macosxlibs/libvorbis.a; sourceTree = "<group>"; };
-		C0AA9F2F281D4ABD00BEEAAD /* libtheoradec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtheoradec.a; path = ../macosxlibs/libtheoradec.a; sourceTree = "<group>"; };
 		C0AA9F31281D4ABD00BEEAAD /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = ../macosxlibs/libogg.a; sourceTree = "<group>"; };
+		C0F1BA742823447D004CE4A5 /* plugin_movie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = plugin_movie.c; path = ../shared/generated/plugin_movie.c; sourceTree = "<group>"; };
 		F5815AB71EE5C6690027695F /* CoronaNative.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CoronaNative.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05DC74128234B3300FF8469 /* libtheoradec.a in Frameworks */,
 				C08CF45028220F6400F82537 /* libogg.a in Frameworks */,
-				C08CF45128220F6400F82537 /* libtheoradec.a in Frameworks */,
 				C08CF45228220F6400F82537 /* libvorbis.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +64,7 @@
 		A4151F3316879B8200B2B43A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C0A211CE2822024000CF866B /* generated */,
+				C0F1BA742823447D004CE4A5 /* plugin_movie.c */,
 				C05CBF08281CF20500DB7F91 /* PluginMovie.h */,
 				C05CBF07281CF20500DB7F91 /* theoraplay_cvtrgb.h */,
 				C05CBF02281CF19700DB7F91 /* PluginMovie.cpp */,
@@ -93,8 +94,8 @@
 		A482DA8615F9B7E70084DC42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C05DC74028234AF700FF8469 /* libtheoradec.a */,
 				C0AA9F31281D4ABD00BEEAAD /* libogg.a */,
-				C0AA9F2F281D4ABD00BEEAAD /* libtheoradec.a */,
 				C0AA9F2E281D4ABD00BEEAAD /* libvorbis.a */,
 				A4430897164C70D800B9117B /* Foundation.framework */,
 			);
@@ -183,7 +184,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\n# Checks exit value for error\n# \ncheckError() {\n    if [ $? -ne 0 ]\n    then\n        echo \"Exiting due to errors (above)\"\n        exit -1\n    fi\n}\n\nPLUGINS_DIR=\"${HOME}/Library/Application Support/Corona/Simulator/Plugins\"\n\nmkdir -p \"$PLUGINS_DIR\"\ncheckError\n\ncp -v $CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME \"$PLUGINS_DIR\"/.\ncheckError";
+			shellScript = "#\n# Checks exit value for error\n# \ncheckError() {\n    if [ $? -ne 0 ]\n    then\n        echo \"Exiting due to errors (above)\"\n        exit -1\n    fi\n}\n\nPLUGINS_DIR=\"${HOME}/Library/Application Support/Corona/Simulator/Plugins\"\n\nmkdir -p \"$PLUGINS_DIR\"\ncheckError\n\ncp -v $CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME \"$PLUGINS_DIR\"/.\ncheckError\n";
 			showEnvVarsInLog = 0;
 		};
 		C22F67901EE9FA0A009D6E9D /* Corona Native */ = {
@@ -198,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# echo \"CORONA_ROOT: ${CORONA_ROOT}\"\nif [ ! -d \"${CORONA_ROOT}\" ]\nthen\necho \"error: Corona Native has not been setup.  Run 'Native/SetupCoronaNative.app' in your Corona install to set it up\" >&2\n\nexit 1\nelse\necho \"Building with Corona Native from $(readlink \"${CORONA_ROOT}\")\"\nfi";
+			shellScript = "# echo \"CORONA_ROOT: ${CORONA_ROOT}\"\nif [ ! -d \"${CORONA_ROOT}\" ]\nthen\necho \"error: Corona Native has not been setup.  Run 'Native/SetupCoronaNative.app' in your Corona install to set it up\" >&2\n\nexit 1\nelse\necho \"Building with Corona Native from $(readlink \"${CORONA_ROOT}\")\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -208,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F1BA752823447D004CE4A5 /* plugin_movie.c in Sources */,
 				C05CBF06281CF19700DB7F91 /* theoraplay.c in Sources */,
 				C05CBF05281CF19700DB7F91 /* PluginMovie.cpp in Sources */,
 			);
