@@ -529,7 +529,7 @@
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = theoradec;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -547,7 +547,7 @@
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = theoradec;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;

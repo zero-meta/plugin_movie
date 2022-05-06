@@ -228,7 +228,6 @@ function scene:show(event)
             {
                 x = centerX,
                 y = centerY,
-                radius = 300,
                 width = 960,
                 height = 540,
                 channel = 3,
