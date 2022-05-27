@@ -737,6 +737,7 @@
 					../../libogg/include,
 				);
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PREBINDING = NO;
 				PRODUCT_NAME = vorbis;
 				SDKROOT = iphoneos;
@@ -756,6 +757,7 @@
 					../../libogg/include,
 				);
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PREBINDING = NO;
 				PRODUCT_NAME = vorbis;
 				SDKROOT = iphoneos;
