@@ -1,14 +1,55 @@
 # Movie
 A video-to-texture plugin for the solar2D (formerly corona-sdk) game engine
 
-# Usage
-Refer to the example project in the `Corona/` directory
-
 # Features
 - Plays `Ogg Theora` video files
 - Capable of playing videos in a loop
 - Renders video to a `CoronaExternalTexture` that can be used to fill a `ShapeObject`, `ImageRect`, etc
 - Automatically plays audio in synchronicity with video
+
+# Usage
+Add the plugin to your build settings like so:
+```lua
+plugins = {
+    ["plugin.movie"] = {
+        publisherId = "com.ansh3ll"
+    },
+},
+```
+
+Simple usage example like so:
+```lua
+local movie = require('plugin.movie')
+
+local function movieListener(event)
+    if event.phase == 'stopped' then
+        print('Video watched to end? ', event.completed)
+    end
+    --
+    for k, v in pairs(event) do
+        print(k .. ' = ' .. v)
+    end
+end
+
+local player = movie.newMovieRect(
+    {
+        x = display.contentCenterX,
+        y = display.contentCenterY,
+        width = 960,
+        height = 540,
+        channel = 3,
+        listener = movieListener,
+        filename = 'intro_cutscene.ogv'
+    }
+)
+
+audio.setVolume(1, {channel = player.channel})
+player.play()
+```
+
+A more advanced usage example can be found in the `Corona/` directory [here](https://github.com/ANSH3LL/plugin_movie/tree/main/Corona)
+
+If you would like to take the DIY option and use a `MovieTexture` to fill an object of your choice, take a look at the implementation of `MovieRect` [here](https://github.com/ANSH3LL/plugin_movie/blob/cfe8c121bc9d797f4ec6622a04f827a10cd56ccd/shared/plugin_movie.lua#L31)
 
 # MovieTexture
 A texture object that can play a video
@@ -54,7 +95,6 @@ A convenient way to load and play videos in a loop without worrying about the pl
 - `MovieLoop.playing` - false if playback is paused
 
 # Caveats and recommendations
-- Only supports windows and android (if you can provide iOS and macOS support, please let me know)
 - Only mono and stereo audio is supported. Videos with more than 2 audio channels might not sound as expected
 - Playback speed is limited by the engine's fps. It is thus recommended to use videos with a framerate several values below your game's fps as set in `config.lua`
 - Depending on video resolution, memory usage could be high
@@ -73,3 +113,4 @@ ffmpeg -i video.mp4 -c:v libtheora -q:v 7 -c:a libvorbis -q:a 5 video.ogv
 # Credits
 - [theoraplay](https://github.com/icculus/theoraplay) by [@icculus](https://github.com/icculus)
 - Insipired by the [theora](https://github.com/ggcrunchy/solar2d-plugins/tree/master/theora) plugin by [@ggcrunchy](https://github.com/ggcrunchy) as well as a video wrapper provided by a user of the [Solar2D discord](https://discord.gg/WMtCemc)
+- macOS and iOS builds by [@kwiksher](https://github.com/kwiksher)
