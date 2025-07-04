@@ -14,7 +14,7 @@ BUILD_TYPE=clean
 #
 # Checks exit value for error
 #
-ANDROID_NDK=$HOME/Library/Android/sdk/ndk/22.0.7026061
+ANDROID_NDK=$HOME/Library/Android/sdk/ndk/28.1.13356709
 # if [ -z "$ANDROID_NDK" ]
 # then
 # 	echo "ERROR: ANDROID_NDK environment variable must be defined"
@@ -90,4 +90,3 @@ popd > /dev/null
 ######################
 
 echo Done.
-echo $path/libs/armeabi-v7a/libplugin.zip.so

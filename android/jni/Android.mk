@@ -75,8 +75,8 @@ LOCAL_SHARED_LIBRARIES := liblua libcorona libopenal
 LOCAL_STATIC_LIBRARIES := libogg libvorbis libtheora
 
 ifeq ($(TARGET_ARCH), arm)
-#     LOCAL_CFLAGS+= -D_ARM_ASSEM_
+    LOCAL_CFLAGS+= -D_ARM_ASSEM_
 endif
 
-# LOCAL_ARM_MODE := arm
+LOCAL_ARM_MODE := arm
 include $(BUILD_SHARED_LIBRARY)
