@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-CORONA_NATIVE := C:\PROGRA~2\CORONA~1\Corona\Native
+CORONA_NATIVE := /Applications/CoronaEnterprise
 CORONA_ROOT := $(CORONA_NATIVE)/Corona
 LUA_API_DIR := $(CORONA_ROOT)/shared/include/lua
 LUA_API_CORONA := $(CORONA_ROOT)/shared/include/Corona
@@ -67,13 +67,16 @@ LOCAL_CFLAGS := \
 
 LOCAL_LDLIBS := -s
 
+LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
+LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
+
 LOCAL_SHARED_LIBRARIES := liblua libcorona libopenal
 
 LOCAL_STATIC_LIBRARIES := libogg libvorbis libtheora
 
 ifeq ($(TARGET_ARCH), arm)
-    LOCAL_CFLAGS+= -D_ARM_ASSEM_
+#     LOCAL_CFLAGS+= -D_ARM_ASSEM_
 endif
 
-LOCAL_ARM_MODE := arm
+# LOCAL_ARM_MODE := arm
 include $(BUILD_SHARED_LIBRARY)
